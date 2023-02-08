@@ -17,11 +17,11 @@
         android:name="com.snyam.designwale.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_designwale"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_designwale_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FestivalApp"
         tools:replace="android:theme, android:allowBackup">
