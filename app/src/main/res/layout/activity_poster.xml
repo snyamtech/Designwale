@@ -1,0 +1,2192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_screen">
+
+        <LinearLayout
+            android:id="@+id/topHs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40ssp"
+            android:background="@color/primary_color"
+            android:elevation="@dimen/_4ssp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivMainBack"
+                android:layout_width="@dimen/_40ssp"
+                android:layout_height="@dimen/_40ssp"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_arrow_back" />
+
+            <ImageView
+                android:id="@+id/ivViewOrder"
+                android:layout_width="@dimen/_40ssp"
+                android:layout_height="@dimen/_40ssp"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_layer" />
+
+            <ImageView
+                android:id="@+id/ivCopy"
+                android:layout_width="@dimen/_40ssp"
+                android:layout_height="@dimen/_40ssp"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_copy" />
+
+            <ImageView
+                android:id="@+id/ivUndo"
+                android:layout_width="@dimen/_40ssp"
+                android:visibility="gone"
+                android:layout_height="@dimen/_40ssp"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_undo" />
+
+            <ImageView
+                android:id="@+id/ivRedo"
+                android:layout_width="@dimen/_40ssp"
+                android:layout_height="@dimen/_40ssp"
+                android:visibility="gone"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_redo" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/btnSave"
+                android:layout_width="@dimen/_40ssp"
+                android:layout_height="@dimen/_40ssp"
+                android:padding="@dimen/_13ssp"
+                android:src="@drawable/ic_save_poster" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bgFrameLayoutHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/llInv"
+            android:layout_below="@+id/topHs"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivPicker"
+                android:layout_width="@dimen/_100ssp"
+                android:layout_height="@dimen/_100ssp"
+                android:padding="@dimen/_15ssp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_picker_big"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/center_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/videoPlayer"
+                    android:layout_width="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/main_rel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <RelativeLayout
+                        android:id="@+id/shape_rel"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true" />
+
+                    <ImageView
+                        android:id="@+id/background_img"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/background_blur"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true" />
+
+                    <ImageView
+                        android:id="@+id/trans_img"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/txt_stkr_rel"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true" />
+
+                    <ImageView
+                        android:id="@+id/iv_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/iv_frame_watermark"
+                        android:layout_width="@dimen/_70ssp"
+                        android:layout_height="@dimen/_30ssp"
+                        android:layout_gravity="top|right"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="@dimen/_10ssp"
+                        android:alpha="0.8"
+                        android:padding="@dimen/_3ssp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/watermark"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/llInv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46ssp"
+            android:layout_alignParentBottom="true" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:elevation="@dimen/_8ssp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4ssp"
+            android:paddingBottom="@dimen/_4ssp"
+            android:visibility="gone">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromCgImg"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipEditIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Edit"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip3DRotationIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:text="3D Rotation"
+                        android:checkable="true"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipIfvColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Hue"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCrop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Crop"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Round"
+                        android:visibility="gone"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Opacity"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAdjust"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:text="Adjust"
+                        android:visibility="gone"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Filter"
+                        android:visibility="gone"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBlur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:visibility="gone"
+                        android:text="Blur"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgAdjust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/back_from_adjust"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBrightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Brightness"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipContrast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Contrast"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipExposure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Exposure"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSaturation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Saturation"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipWarmth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Warmth"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cg3DRotation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/back3DRotation"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/ivZRotation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Z-Rotation"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/ivXRotation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="X-Rotation"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/ivYRotation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Y-Rotation"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/ivFlip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Flip"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromCg"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipEditTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Edit"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvFontSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="Size"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvRotation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:checkable="true"
+                        android:text="3D Rotation"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Style"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvFont"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Font"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Color"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStroke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Stroke"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipShadow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Shadow"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBackground"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Background"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Opacity"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvLetterSpacing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="LetterSpacing"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvLineSpacing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="LineSpacing"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:visibility="gone"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Theme"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgPosterBackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromPosterBg"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvPosterBgColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Background"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvPosterBgGradientColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Gradient"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvPosterBgPattern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Pattern"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvPosterBgGalleryImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:text="Gallery"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvPosterBgCamImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:text="Camera"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgTextColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromTxtColor"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvTextColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Solid"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvTxtGradient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Gradient"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvTxtPattern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Pattern"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgBackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromTxtBg"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvBgColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Background"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvBgGradientColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Gradient"
+                        android:textColor="@color/tc_chip"
+                        android:visibility="gone"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvBgPattern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Pattern"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvBgOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Opacity"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgStroke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromTxtStroke"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStrokeOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="off"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStrokeColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Color"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStrokeWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Size"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStrokeStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Style"
+                        android:visibility="gone"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvStrokeOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Opacity"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgShadow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_4ssp"
+                    android:paddingEnd="@dimen/_4ssp"
+                    android:visibility="gone"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <ImageView
+                        android:id="@+id/backFromShadow"
+                        android:layout_width="@dimen/_20ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_ic_black"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingTop="@dimen/_6ssp"
+                        android:paddingEnd="@dimen/_7ssp"
+                        android:paddingBottom="@dimen/_6ssp"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvShadowColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Color"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvShadowRadius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Radius"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvShadowAngle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Angle"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/tvShadowOpacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/bg_solid_black_12dp"
+                        android:checkable="true"
+                        android:text="Opacity"
+                        android:textColor="@color/tc_chip"
+                        app:checkedIconEnabled="false"
+                        app:chipBackgroundColor="@color/bg_chip"
+                        app:chipMinTouchTargetSize="0dp"
+                        app:fonts='@{"bold"}' />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:layout_marginBottom="@dimen/_4ssp"
+                android:background="@color/line_gray"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/llEdit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/change_image"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/rounded_layout"
+                    android:elevation="@dimen/_2ssp"
+                    android:layout_marginEnd="@dimen/_8ssp"
+                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/_26ssp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_26ssp"
+                        android:layout_height="@dimen/_26ssp"
+                        android:padding="@dimen/_7ssp"
+                        android:src="@drawable/ic_baseline_repeat_24"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Change Image"
+                        android:layout_marginEnd="@dimen/_4ssp"
+                        android:gravity="center"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/tvErase"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_7ssp"
+                    android:src="@drawable/ic_erase"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/ivUpImg"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_up_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivDownImg"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_down_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivLeftImg"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivRightImg"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tvSize"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ivMinus"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:gravity="center"
+                    android:textColor="@color/black_1000"
+                    android:background="@drawable/bg"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_20ssp"
+                    android:scaleType="fitCenter"
+                    android:text="-"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvSizeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:gravity="center"
+                    android:textColor="@color/gray_dec"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_20ssp"
+                    android:text="50"
+                    />
+
+                <TextView
+                    android:id="@+id/ivPlus"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:gravity="center"
+                    android:textColor="@color/black_1000"
+                    android:background="@drawable/bg"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_18ssp"
+                    android:scaleType="fitCenter"
+                    android:text="+"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTvEdit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_7ssp"
+                    android:src="@drawable/ic_edit_tv" />
+
+                <ImageView
+                    android:id="@+id/ivUpTv"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_up_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivDownTv"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_down_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivLeftTv"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivRightTv"
+                    android:layout_width="@dimen/_27ssp"
+                    android:layout_height="@dimen/_27ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llFlip"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvHFlip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4ssp"
+                    android:drawableTint="@color/black"
+                    android:padding="@dimen/_8ssp"
+                    android:text="Horizontal"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_horizontal_flip"
+                    app:fonts='@{"bold"}' />
+
+                <TextView
+                    android:id="@+id/tvVFlip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4ssp"
+                    android:drawableTint="@color/black"
+                    android:padding="@dimen/_8ssp"
+                    android:text="Vertical"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_vertical_flip"
+                    app:fonts='@{"bold"}' />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCrop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvAspectCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4ssp"
+                    android:drawableTint="@color/black"
+                    android:padding="@dimen/_8ssp"
+                    android:text="Aspect Crop"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_crop"
+                    app:fonts='@{"bold"}' />
+
+                <TextView
+                    android:id="@+id/tvShapeCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_4ssp"
+                    android:drawableTint="@color/black"
+                    android:padding="@dimen/_8ssp"
+                    android:visibility="gone"
+                    android:text="Shape Crop"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_shape_crop"
+                    app:fonts='@{"bold"}' />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/hsTVStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:visibility="gone"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/align_left"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/align_left"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/align_center"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/align_center"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/align_right"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/align_right"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_cap"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_cap"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_first_cap"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_first_cap"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_small"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_small"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_underline"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_underline"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_bold"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_bold"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_italic"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white"
+                        android:src="@drawable/font_italic"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/font_center_line"
+                        android:layout_width="@dimen/_35ssp"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginHorizontal="@dimen/_4ssp"
+                        android:background="@color/white_1000"
+                        android:src="@drawable/font_strikethrough"
+                        android:padding="@dimen/_8ssp"
+                        android:elevation="@dimen/_2ssp"
+                        app:riv_corner_radius="@dimen/_3ssp" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFonts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/_4ssp"
+                android:paddingEnd="@dimen/_4ssp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <SeekBar
+                android:id="@+id/sb"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:maxHeight="@dimen/_5ssp"
+                android:minHeight="@dimen/_5ssp"
+                android:paddingStart="@dimen/_16ssp"
+                android:paddingEnd="@dimen/_16ssp"
+                android:progress="10"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:splitTrack="false"
+                android:thumb="@drawable/sb_thumb"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llShadowAngle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivUp"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginEnd="@dimen/_2ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_up_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivDown"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginStart="@dimen/_2ssp"
+                    android:layout_marginEnd="@dimen/_2ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_down_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginStart="@dimen/_2ssp"
+                    android:layout_marginEnd="@dimen/_2ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_left_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivRight"
+                    android:layout_width="@dimen/_26ssp"
+                    android:layout_height="@dimen/_26ssp"
+                    android:layout_marginStart="@dimen/_2ssp"
+                    android:background="@drawable/bg"
+                    android:padding="@dimen/_8ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llStrokeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:background="@color/al_white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivLine"
+                    android:layout_width="@dimen/_24ssp"
+                    android:layout_height="@dimen/_24ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:padding="@dimen/_2ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s_line" />
+
+                <ImageView
+                    android:id="@+id/ivDash"
+                    android:layout_width="@dimen/_24ssp"
+                    android:layout_height="@dimen/_24ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:padding="@dimen/_2ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dash" />
+
+                <ImageView
+                    android:id="@+id/ivDot"
+                    android:layout_width="@dimen/_24ssp"
+                    android:layout_height="@dimen/_24ssp"
+                    android:layout_marginStart="@dimen/_4ssp"
+                    android:padding="@dimen/_2ssp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dot" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25ssp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/gd_orientation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_gradientH"
+                            android:layout_width="@dimen/_30ssp"
+                            android:layout_height="match_parent"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_horizontal_flip" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/txt_gray" />
+
+                        <ImageView
+                            android:id="@+id/iv_gradientV"
+                            android:layout_width="@dimen/_30ssp"
+                            android:layout_height="match_parent"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_vertical_flip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_gradients"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="@dimen/_30ssp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/nsw"
+                android:layout_centerHorizontal="true"
+                android:background="@color/tr_gray"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/text_frame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:text="Select Frame"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hv_cat"
+                    android:layout_below="@+id/text_frame"
+                    android:layout_centerHorizontal="true"
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cgFrameCate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_4ssp"
+                        android:paddingEnd="@dimen/_4ssp"
+                        app:selectionRequired="true"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/text_not_frame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:text="No Frame Found! for this image size"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/hv_cat"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:textSize='@{"font_body_size"}' />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hv_cat"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="@dimen/_2ssp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_business"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/tr_gray"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/text_business"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_5ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginEnd="@dimen/_5ssp"
+                    android:text="@string/menu_business"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_business"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="@dimen/_2ssp">
+
+                    <CheckBox
+                        android:id="@+id/cb_adress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/address"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                    <CheckBox
+                        android:id="@+id/cb_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_35ssp"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/name"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintEnd_toStartOf="@+id/cb_adress"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                    <CheckBox
+                        android:id="@+id/cb_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_35ssp"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/phone"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintStart_toEndOf="@+id/cb_adress"
+                        app:layout_constraintTop_toTopOf="@+id/cb_adress"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                    <CheckBox
+                        android:id="@+id/cb_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/email"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintStart_toStartOf="@+id/cb_adress"
+                        app:layout_constraintTop_toBottomOf="@+id/cb_adress"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                    <CheckBox
+                        android:id="@+id/cb_website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/website"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintStart_toStartOf="@+id/cb_name"
+                        app:layout_constraintTop_toTopOf="@+id/cb_email"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                    <CheckBox
+                        android:id="@+id/cb_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/nav_color"
+                        android:text="@string/logo"
+                        android:textColor="@color/black"
+                        app:fonts='@{"bold"}'
+                        app:layout_constraintStart_toStartOf="@+id/cb_phone"
+                        app:layout_constraintTop_toTopOf="@+id/cb_email"
+                        app:textSize='@{"font_body_xs_size"}' />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_sticker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/topHs"
+            android:clickable="false"
+            android:background="@color/bg_stickers"
+            android:layout_centerVertical="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="@dimen/_20ssp"
+                android:layout_height="@dimen/_20ssp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_4ssp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_4ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_cancel"
+                />
+
+            <TextView
+                android:id="@+id/text_sticker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/_5ssp"
+                android:text="@string/select_sticker"
+                android:textColor="@color/al_white"
+                app:fonts='@{"bold"}'
+                app:textSize='@{"font_body_s_size"}' />
+
+            <LinearLayout
+                android:id="@+id/lv_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_sticker"
+                android:layout_margin="@dimen/_8ssp"
+                android:background="@drawable/bg_phone_btn"
+                android:backgroundTint="@color/blue_grey_800"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="@dimen/_30ssp"
+                    android:layout_height="@dimen/_30ssp"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:alpha="0.5"
+                    android:padding="@dimen/_2ssp"
+                    android:src="@drawable/ic_search" />
+
+                <EditText
+                    android:id="@+id/et_search_stickers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent_color"
+                    android:hint="Search Sticker"
+                    android:lines="1"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/al_white"
+                    android:textColorHint="@color/tr_gray"
+                    app:fonts='@{"normal"}'
+                    app:textSize='@{"font_body_s_size"}' />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sticker_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lv_search"
+                android:layout_marginVertical="@dimen/_3ssp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_stickers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:layout_below="@+id/rv_sticker_category"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sticker"
+                android:layout_width="match_parent"
+                app:spanCount="4"
+                android:visibility="gone"
+                android:layout_below="@+id/lv_search"
+                android:padding="@dimen/_2ssp"
+                android:layout_alignParentBottom="true"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llPosterBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46ssp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_8ssp"
+            android:paddingEnd="@dimen/_8ssp">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvAddFame"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:drawableTint="@color/black"
+                        android:gravity="center"
+                        android:text="Frames"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_frames"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvBusiness"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:drawableTint="@color/black"
+                        android:gravity="center"
+                        android:text="Business"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_business"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvAddText"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:text="Text"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_add_text"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvAddSticker"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:text="Sticker"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_sticker"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvAddEmoji"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:text="Emoji"
+                        android:visibility="gone"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_emoji"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvAddImg"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:text="Image"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_add_img"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvTextArt"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:text="Text Arts"
+                        android:visibility="gone"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_text_art"
+                        app:fonts='@{"bold"}' />
+
+                    <TextView
+                        android:id="@+id/tvMyArts"
+                        android:layout_width="@dimen/_48ssp"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/_5ssp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:text="My Arts"
+                        android:textColor="@color/black"
+                        app:textSize='@{"font_body_xs_size"}'
+                        android:drawableTop="@drawable/ic_my_art"
+                        app:fonts='@{"bold"}' />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vllLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topHs"
+            android:background="#80000000"
+            android:elevation="@dimen/_10ssp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topHs"
+            android:layout_marginEnd="@dimen/_48ssp"
+            android:elevation="@dimen/_12ssp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_1ssp"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvViewOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:elevation="@dimen/_8ssp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.woxthebox.draglistview.DragListView
+                android:id="@+id/drag_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="10dp"
+                android:scrollbarThumbVertical="@drawable/sb_thumb"
+                android:scrollbars="vertical" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_24ssp"
+                android:layout_height="@dimen/_24ssp"
+                android:src="@drawable/ic_close_layer" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

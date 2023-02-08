@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.snyam.designwale.items.ProductItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_4ssp"
+        android:layout_marginEnd="@dimen/_4ssp"
+        android:layoutAnimation="@anim/layout_animation"
+        android:layout_marginVertical="@dimen/_4ssp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_5ssp"
+            app:cardElevation="@dimen/_4ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_fest_image"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_100ssp"
+                    android:scaleType="centerCrop"
+                    app:imageURL="@{data.image}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="@dimen/_5ssp" />
+
+                <TextView
+                    android:id="@+id/txt_fest_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_4ssp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:paddingHorizontal="@dimen/_4ssp"
+                    android:paddingVertical="@dimen/_2ssp"
+                    android:text="@{data.title}"
+                    android:textColor="@color/black"
+                    app:fonts='@{"super_extra_bold"}'
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_fest_image"
+                    app:textSize='@{"font_body_s_size"}'
+                    tools:text="24, Jun 2022" />
+
+                <TextView
+                    android:id="@+id/tv_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="₹"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gray_dec"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/txt_fest_date"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fest_date"
+                    app:textSize='@{"font_body_xs_size"}' />
+
+                <TextView
+                    android:id="@+id/txt_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2ssp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:paddingHorizontal="@dimen/_2ssp"
+                    android:paddingVertical="@dimen/_2ssp"
+                    android:text="@{data.price}"
+                    android:textColor="@color/gray_dec"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintStart_toEndOf="@+id/tv_currency"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fest_date"
+                    app:textSize='@{"font_body_xs_size"}'
+                    tools:text="24" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1ssp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/gray"
+                    android:rotation="0"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_price"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_price"
+                    app:layout_constraintStart_toStartOf="@+id/tv_currency"
+                    app:layout_constraintTop_toTopOf="@+id/txt_price" />
+
+                <TextView
+                    android:id="@+id/tv_currency2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="₹"
+                    android:textAllCaps="true"
+                    android:layout_marginStart="@dimen/_3ssp"
+                    android:textColor="@color/black"
+                    app:fonts='@{"bold"}'
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_price"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fest_date"
+                    app:textSize='@{"font_body_s_size"}' />
+
+                <TextView
+                    android:id="@+id/txt_discount_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2ssp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{data.discountPrice}"
+                    android:textColor="@color/black"
+                    app:fonts='@{"super_extra_bold"}'
+                    app:layout_constraintStart_toEndOf="@+id/tv_currency2"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fest_date"
+                    app:textSize='@{"font_body_s_size"}'
+                    tools:text="24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

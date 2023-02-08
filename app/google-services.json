@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "992455273709",
+    "project_id": "designwale-f139e",
+    "storage_bucket": "designwale-f139e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992455273709:android:02653081eb86127f9b30e4",
+        "android_client_info": {
+          "package_name": "com.snyam.designwale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992455273709-5moplufjd4qkallctc96ebv6u8hih7qa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.snyam.designwale",
+            "certificate_hash": "01207258b405ff9986ae87930c8310dc5ff92687"
+          }
+        },
+        {
+          "client_id": "992455273709-hf7u5tkrhqod0q36h7gftnc4rf5fq57h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYaHFVE_KrH_n5pAyQVGfxKg1thKU7_Ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992455273709-hf7u5tkrhqod0q36h7gftnc4rf5fq57h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

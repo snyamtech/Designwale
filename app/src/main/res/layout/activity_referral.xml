@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_screen"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_layout" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ivReferralBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#68cc98"
+                        android:gravity="center"
+                        android:scaleType="centerCrop">
+
+
+                        <ImageView
+                            android:id="@+id/imageView24"
+                            android:layout_width="@dimen/_80ssp"
+                            android:layout_height="@dimen/_100ssp"
+                            android:layout_marginVertical="@dimen/_15ssp"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/refer_1" />
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refer &amp; Earn Real Money"
+                            android:textColor="@color/al_white"
+                            app:fonts='@{"extra_bold"}'
+                            app:layout_constraintEnd_toEndOf="@+id/imageView30"
+                            app:layout_constraintStart_toEndOf="@+id/imageView24"
+                            app:layout_constraintTop_toTopOf="@+id/imageView24"
+                            app:textSize='@{"font_title_size"}' />
+
+                        <ImageView
+                            android:id="@+id/imageView26"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:layout_marginStart="@dimen/_8ssp"
+                            android:layout_marginTop="@dimen/_8ssp"
+                            android:background="@drawable/app_menu_back"
+                            android:padding="@dimen/_8ssp"
+                            android:src="@drawable/people"
+                            app:layout_constraintStart_toEndOf="@+id/imageView24"
+                            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                        <ImageView
+                            android:id="@+id/imageView27"
+                            android:layout_width="@dimen/_20ssp"
+                            android:layout_height="@dimen/_20ssp"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView26"
+                            app:layout_constraintStart_toEndOf="@+id/imageView26"
+                            app:layout_constraintTop_toTopOf="@+id/imageView26"
+                            app:srcCompat="@drawable/forward"
+                            app:tint="@color/al_white" />
+
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Share Link &amp; Refer User"
+                            app:fonts='@{"bold"}'
+                            app:textSize='@{"font_body_xxxs_size"}'
+                            app:layout_constraintEnd_toEndOf="@+id/imageView26"
+                            app:layout_constraintStart_toStartOf="@+id/imageView26"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+                        <ImageView
+                            android:id="@+id/imageView28"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:layout_marginStart="@dimen/_8ssp"
+                            android:layout_marginTop="@dimen/_8ssp"
+                            android:background="@drawable/app_menu_back"
+                            android:padding="@dimen/_8ssp"
+                            android:src="@drawable/tick"
+                            app:layout_constraintStart_toEndOf="@+id/imageView27"
+                            app:layout_constraintTop_toBottomOf="@+id/textView32"
+                            app:tint="@color/green_600" />
+
+                        <ImageView
+                            android:id="@+id/imageView29"
+                            android:layout_width="@dimen/_20ssp"
+                            android:layout_height="@dimen/_20ssp"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+                            app:layout_constraintStart_toEndOf="@+id/imageView28"
+                            app:layout_constraintTop_toTopOf="@+id/imageView28"
+                            app:srcCompat="@drawable/forward"
+                            app:tint="@color/al_white" />
+
+                        <TextView
+                            android:id="@+id/tv_login"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Share Link &amp;\n Refer User"
+                            app:fonts='@{"bold"}'
+                            app:textSize='@{"font_body_xxxs_size"}'
+                            app:layout_constraintEnd_toEndOf="@+id/imageView28"
+                            app:layout_constraintStart_toStartOf="@+id/imageView28"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView30"
+                            android:layout_width="@dimen/_40ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:layout_marginStart="@dimen/_8ssp"
+                            android:layout_marginTop="@dimen/_8ssp"
+                            android:background="@drawable/app_menu_back"
+                            android:padding="@dimen/_8ssp"
+                            android:src="@drawable/crown"
+                            app:layout_constraintStart_toEndOf="@+id/imageView29"
+                            app:layout_constraintTop_toBottomOf="@+id/textView32"
+                             />
+
+                        <TextView
+                            android:id="@+id/tv_subs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Share Link &amp;\n Refer User"
+                            app:fonts='@{"bold"}'
+                            app:textSize='@{"font_body_xxxs_size"}'
+                            app:layout_constraintEnd_toEndOf="@+id/imageView30"
+                            app:layout_constraintStart_toStartOf="@+id/imageView30"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView30" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5ssp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvReferraltext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:text="Copy Your Referral Code Here: "
+                                android:textColor="@color/black"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <LinearLayout
+                                android:id="@+id/lvCopy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5ssp"
+                                android:background="@drawable/dotted_bg"
+                                android:backgroundTint="@color/blue_color"
+                                android:backgroundTintMode="multiply"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvReferralLink"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_8ssp"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_5ssp"
+                                    android:text="EWXPS65"
+                                    android:textColor="@color/al_white"
+                                    android:textIsSelectable="true"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivCopy"
+                                    android:layout_width="@dimen/_20ssp"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:layout_margin="@dimen/_5ssp"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_3ssp"
+                                    android:src="@drawable/ic_copy"
+                                    app:tint="@color/al_white" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_5ssp"
+                                    android:text="Share Your Referral Link:"
+                                    android:textColor="@color/black"
+                                    android:textIsSelectable="true"
+                                    android:textSize="@dimen/_9ssp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivWhatsapp"
+                                android:layout_width="@dimen/_18ssp"
+                                android:layout_height="@dimen/_18ssp"
+                                android:layout_margin="@dimen/_3ssp"
+                                android:gravity="center"
+                                android:src="@drawable/ic_whatsapp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivInstagram"
+                                android:layout_width="@dimen/_18ssp"
+                                android:layout_height="@dimen/_18ssp"
+                                android:layout_margin="@dimen/_3ssp"
+                                android:gravity="center"
+                                android:src="@drawable/ic_instagram" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivMore"
+                                android:layout_width="@dimen/_18ssp"
+                                android:layout_height="@dimen/_18ssp"
+                                android:layout_margin="@dimen/_3ssp"
+                                android:gravity="center"
+                                android:src="@drawable/ic_download_share" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvReadReferralPolicy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:padding="@dimen/_5ssp"
+                            android:text="Read Referral Privacy Policy"
+                            android:textColor="@color/blue_500"
+                            android:textIsSelectable="true"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10ssp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70ssp"
+                            android:layout_marginRight="@dimen/_5ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/gray_dec"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvCurrentBalance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_10ssp"
+                                android:textColor="@color/black_1000"
+                                android:textSize="@dimen/_15ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_4ssp"
+                                android:text="Current Balance"
+                                android:textColor="@color/black_1000"
+                                android:textSize="@dimen/_8ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_70ssp"
+                            android:layout_marginLeft="@dimen/_5ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/gray_dec"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvTotalEarning"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_11ssp"
+                                android:textColor="@color/black_1000"
+                                android:textSize="@dimen/_15ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="@dimen/_4ssp"
+                                android:text="Total Earning Till Date"
+                                android:textColor="@color/black_1000"
+                                android:textSize="@dimen/_8ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/linear_withdrawal"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_38ssp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/blue_color"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/_5ssp"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:text="Withdrawal Request"
+                                android:textColor="@color/al_white"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_wallet_history"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_38ssp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/blue_color"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/_5ssp"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:text="History"
+                                android:textColor="@color/al_white"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:text="Enter Your UPI ID here"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35ssp"
+                        android:layout_marginLeft="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:layout_marginRight="@dimen/_10ssp"
+                        android:orientation="horizontal">
+
+
+                        <EditText
+                            android:id="@+id/et_upi_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_8ssp"
+                            android:layout_weight="10"
+                            android:background="@drawable/white_shape_edit"
+                            android:cursorVisible="true"
+                            android:hint="Enter UPI ID"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/_10ssp"
+                            android:paddingVertical="@dimen/_10ssp"
+                            android:textAlignment="textStart"
+                            android:textColorHint="@color/gray_dec" />
+
+                        <TextView
+                            android:id="@+id/tvAddUpiid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/green_A700"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_15ssp"
+                            android:paddingRight="@dimen/_15ssp"
+                            android:text="Add"
+                            android:textColor="@color/al_white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10ssp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_80ssp"
+                            android:layout_marginRight="@dimen/_5ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/alpha_active_color"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10ssp">
+
+                            <TextView
+                                android:id="@+id/tvTotalRegister"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="@color/blue_color"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3ssp"
+                                android:gravity="center"
+                                android:text="Businessmen"
+                                android:textColor="@color/blue_color"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_8ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5ssp"
+                                android:gravity="center"
+                                android:text="Register From Your Referral Code"
+                                android:textColor="@color/black"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_7ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_80ssp"
+                            android:layout_marginLeft="@dimen/_5ssp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_layout"
+                            android:backgroundTint="@color/alpha_active_color"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10ssp">
+
+                            <TextView
+                                android:id="@+id/tvTotalPurchase"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="@color/blue_color"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3ssp"
+                                android:gravity="center"
+                                android:text="Businessmen"
+                                android:textColor="@color/blue_color"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_8ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_5ssp"
+                                android:gravity="center"
+                                android:text="Subscribe Using Your \n Referral Code"
+                                android:textColor="@color/black"
+                                android:textIsSelectable="true"
+                                android:textSize="@dimen/_7ssp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearInviteFriends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/active_color"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_2ssp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_24ssp"
+                android:layout_height="@dimen/_24ssp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5ssp"
+                android:src="@drawable/ic_baseline_card_giftcard_24"
+                app:tint="@color/al_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_5ssp"
+                android:gravity="center"
+                android:padding="@dimen/_5ssp"
+                android:text="Invite Your Friends"
+                android:textColor="@color/al_white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

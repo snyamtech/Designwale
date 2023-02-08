@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/_45ssp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="@dimen/_16ssp"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:layout_width="@dimen/_18ssp"
+        android:layout_height="@dimen/_18ssp"
+        app:srcCompat="@drawable/ic_history"
+        app:tint="@color/gray_dec" />
+
+    <View
+        android:layout_width="@dimen/_16ssp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="Text Suggestion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/gray_dec" />
+
+    <View
+        android:layout_width="@dimen/_16ssp"
+        android:layout_height="0dp" />
+
+</LinearLayout>

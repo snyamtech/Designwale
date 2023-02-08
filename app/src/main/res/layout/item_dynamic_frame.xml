@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+<variable
+    name="frameData"
+    type="com.snyam.designwale.items.DynamicFrameItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/_4ssp"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_base"
+            android:layout_width="@dimen/_50ssp"
+            android:layout_height="@dimen/_50ssp"
+            app:cardCornerRadius="@dimen/_4ssp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/transparent_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="@dimen/_4ssp"
+                android:layout_margin="@dimen/_2ssp"
+                app:cardBackgroundColor="@color/al_white"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:imageURL="@{frameData.thumbnail}"
+                        android:scaleType="fitXY"
+                         />
+
+                    <ImageView
+                        android:id="@+id/iv_prime"
+                        android:layout_width="@dimen/_15ssp"
+                        android:layout_height="@dimen/_15ssp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_2ssp"
+                        android:visibility="@{frameData.is_paid ? View.VISIBLE : View.GONE}"
+                        android:layout_marginEnd="@dimen/_2ssp"
+                        app:srcCompat="@drawable/ic_prime" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

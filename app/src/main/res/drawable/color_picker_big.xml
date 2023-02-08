@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/innerRing"
+        android:gravity="center">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="@dimen/_9ssp"
+                android:color="@color/black" />
+            <corners android:radius="@dimen/_100ssp" />
+        </shape>
+    </item>
+    <item
+        android:id="@+id/ring"
+        android:width="@dimen/_56ssp"
+        android:height="@dimen/_56ssp"
+        android:bottom="1px"
+        android:gravity="center"
+        android:left="1px"
+        android:right="1px"
+        android:top="1px">
+        <shape android:shape="oval">
+            <stroke
+                android:width="@dimen/_9ssp"
+                android:color="@color/white" />
+            <corners android:radius="@dimen/_100ssp" />
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/_2ssp"
+        android:height="@dimen/_2ssp"
+        android:gravity="center">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="0.4dp"
+                android:color="@color/black" />
+        </shape>
+    </item>
+</layer-list>
